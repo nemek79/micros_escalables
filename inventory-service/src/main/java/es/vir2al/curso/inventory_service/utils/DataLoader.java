@@ -21,6 +21,8 @@ public class DataLoader implements CommandLineRunner {
 
         log.info("loading data...");
 
+        inventoryRepository.deleteAll();
+
         inventoryRepository.saveAll(
           List.of(
                   Inventory.builder().sku("000001").quantity(10L).build(),
